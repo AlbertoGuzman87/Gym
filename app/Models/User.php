@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -59,4 +60,21 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function adminlte_image()
+    {
+        $imgUser=User::Where('id',Auth::user()->id)->first();
+        return '/storage/'.$imgUser->profile_photo_path;
+    }
+
+    public function adminlte_desc()
+    {
+        $imgUser=User::Where('id',Auth::user()->id)->first();
+        return $imgUser->name;
+    }
+
+    public function adminlte_profile_url()
+    {
+        return 'user/profile';
+    }
 }
