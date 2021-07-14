@@ -251,11 +251,11 @@ return [
             'route'       => 'dashboard',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
         ],
-        ['header' => 'account_settings'],
+         ['header' => 'MENÚ PRINCIPAL'],
         [
-            'text' => 'profile',
+            'text' => 'Usuarios',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'change_password',

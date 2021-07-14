@@ -29,6 +29,11 @@ class User extends Authenticatable
         'email',
         'password',
         'matricula',
+        'slug',
+        'edad',
+        'genero',
+        'descripcion',
+        'estatus_user_id'
     ];
 
     /**
@@ -64,7 +69,11 @@ class User extends Authenticatable
     public function adminlte_image()
     {
         $imgUser=User::Where('id',Auth::user()->id)->first();
-        return '/storage/'.$imgUser->profile_photo_path;
+        if(is_null($imgUser->profile_photo_path)){
+            return 'https://cdn.pixabay.com/photo/2016/03/27/23/00/weight-lifting-1284616_960_720.jpg';
+        }else{
+            return '/storage/'.$imgUser->profile_photo_path;
+       }
     }
 
     public function adminlte_desc()
@@ -77,4 +86,25 @@ class User extends Authenticatable
     {
         return 'user/profile';
     }
+
+        //Relación uno a muchos
+        public function inscripciones()
+        {
+            return $this->hasMany(Inscripciones::class);
+        }
+        //Relación uno a muchos
+        public function redesSociales()
+        {
+            return $this->hasMany(redesSociales::class);
+        }
+        //Relación uno a muchos
+        public function estatus_user()
+        {
+            return $this->hasMany(Estatus_User::class);
+        }
+        //Relación uno a muchos
+        public function anuncios()
+        {
+            return $this->hasMany(Estatus_User::class);
+        }
 }

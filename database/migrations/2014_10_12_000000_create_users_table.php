@@ -21,7 +21,16 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('matricula')->unique()->nullable();
+            $table->string('slug');
+            $table->string('edad');
+            $table->string('genero');
+            $table->text('descripcion')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
+
+            $table->unsignedBigInteger('estatus_user_id');
+
+            $table->foreign('estatus_user_id')->references('id')->on('estatus__users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
