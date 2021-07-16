@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory('imgPost');
         Storage::makeDirectory('imgPost');
 
-        $this->call(EstatusUser::class);
+        $this->call(StatusUser::class);
         $this->call(UserSeeder::class);
         Actividad::factory(3)->create();
         Inscripciones::factory(10)->create();

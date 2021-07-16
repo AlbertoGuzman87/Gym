@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Estatus_User;
+use App\Models\StatusUser;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -38,7 +39,7 @@ class UserFactory extends Factory
             'descripcion'=>  $this->faker->text(250),
             'matricula' => date('Y').date('m').date('d'). $matricula,
             'email' => $this->faker->unique()->safeEmail(),
-            'estatus_user_id'=>Estatus_User::all()->random()->id ,
+            'status_user_id'=>StatusUser::all()->random()->id ,
             'email_verified_at' => now(),
             'password' => Hash::make('password'), // password
             'remember_token' => Str::random(10),

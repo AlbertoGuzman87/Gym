@@ -43,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
             'edad' => $input['edad'],
             'slug' => Str::slug($input['name']),
             'password' => Hash::make($input['password']),
-            'estatus_user_id' => '2',
+            'status_user_id' => '2',
             'matricula' => date('Y').date('m').date('d'). $matricula,
         ]);
     }

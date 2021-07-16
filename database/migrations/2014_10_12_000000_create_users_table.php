@@ -27,9 +27,9 @@ class CreateUsersTable extends Migration
             $table->text('descripcion')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
 
-            $table->unsignedBigInteger('estatus_user_id');
+            $table->unsignedBigInteger('status_user_id');
 
-            $table->foreign('estatus_user_id')->references('id')->on('estatus__users')->onDelete('cascade');
+            $table->foreign('status_user_id')->references('id')->on('status_users')->onDelete('cascade');
 
             $table->timestamps();
         });

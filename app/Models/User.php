@@ -33,7 +33,7 @@ class User extends Authenticatable
         'edad',
         'genero',
         'descripcion',
-        'estatus_user_id'
+        'status_user_id'
     ];
 
     /**
@@ -95,16 +95,16 @@ class User extends Authenticatable
         //Relación uno a muchos
         public function redesSociales()
         {
-            return $this->hasMany(redesSociales::class);
+            return $this->hasMany(RedesSociales::class);
         }
-        //Relación uno a muchos
-        public function estatus_user()
+        //Relación uno a uno
+        public function status_user()
         {
-            return $this->hasMany(Estatus_User::class);
+            return $this->belongsTo(StatusUser::class);
         }
         //Relación uno a muchos
         public function anuncios()
         {
-            return $this->hasMany(Estatus_User::class);
+            return $this->hasMany(Anuncios::class);
         }
 }

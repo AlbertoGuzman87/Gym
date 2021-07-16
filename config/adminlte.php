@@ -254,8 +254,9 @@ return [
          ['header' => 'MENÚ PRINCIPAL'],
         [
             'text' => 'Usuarios',
-            'url'  => 'admin/settings',
+            'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-users',
+            'active' => ['admin/users*'],
         ],
         [
             'text' => 'change_password',
@@ -399,12 +400,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@11',
                 ],
             ],
         ],
@@ -451,5 +452,5 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];

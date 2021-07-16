@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
             'descripcion'=>'Ing. Gestión y Desarrollo de Software.',
             'matricula' => date('Y').date('m').date('d').'1',
             'email' => 'juanalbertoguzman87@gmail.com',
-            'estatus_user_id' => 1,
+            'status_user_id' => 1,
             'password' => bcrypt('estrella234'),
         ]);
 
