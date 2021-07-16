@@ -37,7 +37,7 @@ class Users extends Controller
 
         $matri = User::all()->count();
         if($matri==""){
-            $matricula= 1;
+            $matricula= 1 ;
         }else{
             $matricula =  $matri + 1 ;
         }
